@@ -83,8 +83,15 @@ python main.py --i wheat-vcf/ALL.vcf.gz \
                --w 0.75 \
                --t 0
 ```
-
-
+This example is:
+- testing on all the algorithms
+- with pretreatment
+- minimum read number `15`
+- choosing SNPs from `chr1`, `chr2` and `chr3`
+- choosing bulks `Mutant123` and `Wild123`
+- using smooth function `Tri-kernel-smooth`
+- window size fraction `0.75`
+- auto calculate threshold for each algorithm
 
 ## Outputs
 
