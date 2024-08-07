@@ -77,15 +77,15 @@ Move inside the directory.
 cd DeepBSA
 ```
 
-We have put the vcf file inside the directory under the path `wheat-vcf/ALL.vcf.gz`.
+We have put the vcf file inside the directory under the path `data/hq.vcf.gz`.
 
 ```bash
-python main.py --i wheat-vcf/ALL.vcf.gz \
+python main.py --i data/hq.vcf.gz \
                --m DL K ED4 SNP SmoothG SmoothLOD Ridit \
                --p 1 \
                --p1 15 \
-               --chromosomes chr1 chr2 chr3 \
-               --samples Mutant123 Wild123 \
+               --chromosomes 1A 1B 1D 2A 2B 2D 3A 3B 3D 4A 4B 4D 5A 5B 5D 6A 6B 6D 7A 7B 7D \
+               --samples B-WT B-m \
                --s Tri-kernel-smooth \
                --w 0.75 \
                --t 0
@@ -94,8 +94,8 @@ This example is:
 - testing on all the algorithms
 - with pretreatment
 - minimum read number `15`
-- choosing SNPs from `chr1`, `chr2` and `chr3`
-- choosing bulks `Mutant123` and `Wild123`
+- choosing SNPs from `1A` to `7D`
+- choosing bulks `B-WT` and `B-m`
 - using smooth function `Tri-kernel-smooth`
 - window size fraction `0.75`
 - auto calculate threshold for each algorithm
@@ -105,14 +105,14 @@ This example is:
 The program will output multiple directories named `Excel_Files`, `NoPretreatment`, `Pretreated_Files`, some `__pycache__` and `Results`. Inside `Results`: 
 ```
 Results
-├── ALL
+├── hq
     ├──15-DL-Tri-kernel-smooth-0.75-0.1250.png
     ├──15-DL-Tri-kernel-smooth-0.75-0.1250.pdf
     ├──15-DL-Tri-kernel-smooth-0.75-0.1250.csv
     ├──...
 ```
 
-The program can be rerun on different datasets, and each run will create a new folder inside the `Results` directory in the format `Results/{basename_of_file}/`. For example, we have `wheat-vcf/ALL.vcf.gz`, so the directory is named `ALL`. **Therefore, it is essential that the VCF files have unique basenames to avoid conflicts**.
+The program can be rerun on different datasets, and each run will create a new folder inside the `Results` directory in the format `Results/{basename_of_file}/`. For example, we have `data/hq.vcf.gz` and the directory is named `hq`. **Therefore, it is essential that the VCF files have unique basenames to avoid conflicts**.
 
 Naming convention: `{read_number}-{func_name}-{smooth_func}-{smooth_window_size}-{threshold}.pdf`
 
