@@ -650,10 +650,10 @@ class Statistic(object):
                                                                    self.smooth_window_size, self.threshold))
         dic = peaks_finder(smooth_data_for_plot, self.position, float(self.threshold), chrome_set=self.chrome_set,
                            save_path=peaks_save_path)
-        confidence_save_path = os.path.join(self.save_path,
-                                            "{}-{}-{}-{}-{}_confidence_interval_data.json".format(self.read_number,
-                                                                                                  self.func_name,
-                                                                                                  self.smooth_func,
-                                                                                                  self.smooth_window_size,
-                                                                                                  self.threshold))
-        confidence_interval_plot(dic, smooth_data_for_plot, self.position, self.chrome_set, confidence_save_path)
+        #confidence_save_path = os.path.join(self.save_path,
+                                            # "{}-{}-{}-{}-{}_confidence_interval_data.json".format(self.read_number,
+                                            #                                                       self.func_name,
+                                            #                                                       self.smooth_func,
+                                            #                                                       self.smooth_window_size,
+                                            #                                                       self.threshold))
+        #confidence_interval_plot(dic, smooth_data_for_plot, self.position, self.chrome_set, confidence_save_path)
