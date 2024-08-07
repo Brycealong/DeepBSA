@@ -63,14 +63,14 @@ options:
 
 ```
 python main.py --i wheat-vcf/ALL.vcf.gz \
-				--m DL K ED4 SNP SmoothG SmoothLOD Ridit \
-				--p 1 \
-				--p1 15 \
-				--chromosomes chr1 chr2 chr3 \
-				--samples Mutant123 Wild123 \
-				--s Tri-kernel-smooth \
-        --w 0.75
-        --t 0
+               --m DL K ED4 SNP SmoothG SmoothLOD Ridit \
+               --p 1 \
+               --p1 15 \
+               --chromosomes chr1 chr2 chr3 \
+               --samples Mutant123 Wild123 \
+               --s Tri-kernel-smooth \
+               --w 0.75 \
+               --t 0
 ```
 
 ## Outputs
