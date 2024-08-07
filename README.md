@@ -30,7 +30,7 @@ conda install -c conda-forge pandas matplotlib statsmodels tensorflow pyinstalle
 ```
 ### Models
 
-Please download [this directory](https://drive.google.com/drive/folders/1t-UBBbp1V83j4jv8_htW3BwhGzYX9QLK?usp=drive_link) entirely and put it at the same location with `main.py`.
+Please download [this directory](https://drive.google.com/drive/folders/1t-UBBbp1V83j4jv8_htW3BwhGzYX9QLK?usp=drive_link) entirely and place it at the same location with `main.py`.
 
 
 
