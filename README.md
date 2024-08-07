@@ -124,7 +124,7 @@ Naming convention: `{read_number}-{func_name}-{smooth_func}-{smooth_window_size}
 
 results:
 
-- `0-DL-Tri-kernel-smooth-0.75-0.1250.csv` : columns in this order.
+- `15-DL-Tri-kernel-smooth-0.75-0.1177.csv` : columns in this order.
 
   + **QTL**: Identifier for the Quantitative Trait Locus.
   + **Chr**: Chromosome where the QTL is located.
@@ -132,7 +132,8 @@ results:
   + **Peak**: Peak position of the QTL.
   + **Right**: Right boundary of the QTL interval.
   + **Value**: Smoothed data of the peak position.
-- `0-DL-Tri-kernel-smooth-0.75-0.1250.png`
+
+- `15-DL-Tri-kernel-smooth-0.75-0.1177.png`
 
   - **dots** : variant
 
@@ -140,9 +141,9 @@ results:
 
   - **<span style="color: blue; ">blue dashed line</span>** : threshold
 
-![0-DL-Tri-kernel-smooth-0.75-0.1250](https://github.com/Brycealong/DeepBSA/blob/main/Results/0-DL-Tri-kernel-smooth-0.75-0.1250.png)
+![15-DL-Tri-kernel-smooth-0.75-0.1177](https://github.com/Brycealong/DeepBSA/blob/main/Results/hq/15-DL-Tri-kernel-smooth-0.75-0.1177.png)
 
-- `0-DL-Tri-kernel-smooth-0.75-0.1250.pdf` : same as png.
+- `15-DL-Tri-kernel-smooth-0.75-0.1177.pdf` : same as png.
 
 Same as above for other methods.
 
