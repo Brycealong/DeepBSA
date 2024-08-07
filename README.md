@@ -31,7 +31,11 @@ conda install -c conda-forge pandas matplotlib statsmodels tensorflow pyinstalle
 
 ### Clone this repository
 
-Change directory to where you want to place this repo and use `git clone https://github.com/Brycealong/DeepBSA.git` to clone the repo. The default name of folder is `DeepBSA`.
+Change directory to where you want to place this repo and use 
+```
+git clone https://github.com/Brycealong/DeepBSA.git
+```
+to clone the repo. The default name of folder is `DeepBSA`.
 
 ### Models
 
