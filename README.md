@@ -32,6 +32,8 @@ conda install -c conda-forge pandas matplotlib statsmodels tensorflow pyinstalle
 
 Please download [this directory](https://drive.google.com/drive/folders/1t-UBBbp1V83j4jv8_htW3BwhGzYX9QLK?usp=drive_link) entirely and put it at the same location with `main.py`.
 
+
+
 ## Usage
 
 ```
@@ -61,7 +63,7 @@ options:
 
 ### Example:
 
-```
+```bash
 python main.py --i wheat-vcf/ALL.vcf.gz \
                --m DL K ED4 SNP SmoothG SmoothLOD Ridit \
                --p 1 \
@@ -73,7 +75,10 @@ python main.py --i wheat-vcf/ALL.vcf.gz \
                --t 0
 ```
 
+
+
 ## Outputs
+
 The program will output a directory called `Results`. Files inside are like below.
 ```
 ├── 0-DL-Tri-kernel-smooth-0.75-0.1250.png
@@ -81,7 +86,18 @@ The program will output a directory called `Results`. Files inside are like belo
 ├── 0-DL-Tri-kernel-smooth-0.75-0.1250.csv
 ├── ...
 ```
+Naming convention: `{read_number}-{func_name}-{smooth_func}-{smooth_window_size}-{threshold}.pdf`
+
+- `read_number`: `--p1`
+- `func_name`: `--m`
+- `smooth_func`: `--s`
+- `smooth_window_size`: `--w` (`auto` if set to 0)
+- `threshold`: `--t` (auto calculated if set to 0)
+
+results:
+
 - `0-DL-Tri-kernel-smooth-0.75-0.1250.csv` : columns in this order.
+
   + **QTL**: Identifier for the Quantitative Trait Locus.
   + **Chr**: Chromosome where the QTL is located.
   + **Left**: Left boundary of the QTL interval.
@@ -90,32 +106,20 @@ The program will output a directory called `Results`. Files inside are like belo
   + **Value**: Smoothed data of the peak position.
 - `0-DL-Tri-kernel-smooth-0.75-0.1250.png`
 
-
-
-+ **POS** - The position on the chromosome in nt 
-+ **REF** - The reference allele at that position 
-+ **ALT** - The alternate allele 
-+ **DP.HIGH** - The read depth at that position in the high bulk 
-+ **AD_REF.HIGH** - The allele depth of the reference allele in the high bulk 
-+ **AD_ALT.HIGH** - The alternative allele depth in the high bulk  
-+ **SNPindex.HIGH** - The calculated SNP-index for the high bulk 
-+ Same as above for the low bulk 
-+ **REF_FRQ** - The reference allele frequency as defined above 
-+ **deltaSNP** - The $\Delta$(SNP-index) as defined above
-
-+ `SNPindex.filt.tsv` : SNPs filtered with user-specified or default thresholds. One column `tricubeDeltaSNP` is added, which represents the smoothed deltaSNP values.
-+ `allchr.png` : delta SNP index for all chromosomes
   - **dots** : variant
-  - **<span style="color: red; ">RED line</span>** : smoothed delta SNP-index
-  ![allchr](https://github.com/Brycealong/QTL-analysis/blob/main/images/allchr.png)
-+ `chr1.png` : delta SNP index for one chromosome. Same for other chromosomes.
-  ![6a](https://github.com/Brycealong/QTL-analysis/blob/main/images/6A.png)
-+ `distribution.png`: distribution of reference allele frequency, read depths of each sample and SNP index of each sample. Adjust your thresholds using this graph.
-  ![dis](https://github.com/Brycealong/QTL-analysis/blob/main/images/distribution.png)
-+ `analysis.log`: log how many SNPs are filtered out on each parameter.
+
+  - **<span style="color: orange; ">orange line</span>** : smoothed data
+
+  - **<span style="color: blue; ">blue dashed line</span>** : threshold
+
+![0-DL-Tri-kernel-smooth-0.75-0.1250](https://github.com/Brycealong/DeepBSA/blob/main/Results/0-DL-Tri-kernel-smooth-0.75-0.1250.png)
+
+- `0-DL-Tri-kernel-smooth-0.75-0.1250.pdf` : same as png.
+
+Same as above for other methods.
 
 
 
 ## Citation
-- Hiroki Takagi, Akira Abe, Kentaro Yoshida, Shunichi Kosugi, Satoshi Natsume, Chikako Mitsuoka, Aiko Uemura, Hiroe Utsushi, Muluneh Tamiru, Shohei Takuno, Hideki Innan, Liliana M. Cano, Sophien Kamoun, Ryohei Terauchi (2013).  [QTL-seq: rapid mapping of quantitative trait loci in rice by whole genome resequencing of DNA from two bulked populations](https://doi.org/10.1111/tpj.12105). Plant journal 74:174-183.
-- Mansfeld, B.N. and Grumet, R. (2018), QTLseqr: An R Package for Bulk Segregant Analysis with Next-Generation Sequencing. The Plant Genome, 11: 180006. https://doi.org/10.3835/plantgenome2018.01.0006
+- Li, Zhao, et al. "DeepBSA: A deep-learning algorithm improves bulked segregant analysis for dissecting complex traits." *Molecular Plant* 15.9 (2022): 1418-1427.
+- Dong, Jianke, et al. "QTL analysis for low temperature tolerance of wild potato species Solanum commersonii in natural field trials." *Scientia Horticulturae* 310 (2023): 111689.
