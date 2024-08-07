@@ -72,6 +72,13 @@ options:
 
 ### Example:
 
+Move inside the directory.
+```bash
+cd DeepBSA
+```
+
+We have put the vcf file inside the directory under the path `wheat-vcf/ALL.vcf.gz`.
+
 ```bash
 python main.py --i wheat-vcf/ALL.vcf.gz \
                --m DL K ED4 SNP SmoothG SmoothLOD Ridit \
@@ -95,13 +102,18 @@ This example is:
 
 ## Outputs
 
-The program will output a directory called `Results`. Files inside are like below.
+The program will output multiple directories named `Excel_Files`, `NoPretreatment`, `Pretreated_Files`, some `__pycache__` and `Results`. Inside `Results`: 
 ```
-├── 0-DL-Tri-kernel-smooth-0.75-0.1250.png
-├── 0-DL-Tri-kernel-smooth-0.75-0.1250.pdf
-├── 0-DL-Tri-kernel-smooth-0.75-0.1250.csv
-├── ...
+Results
+├── ALL
+    ├──15-DL-Tri-kernel-smooth-0.75-0.1250.png
+    ├──15-DL-Tri-kernel-smooth-0.75-0.1250.pdf
+    ├──15-DL-Tri-kernel-smooth-0.75-0.1250.csv
+    ├──...
 ```
+
+The program can be rerun on different datasets, and each run will create a new folder inside the `Results` directory in the format `Results/{basename_of_file}/`. For example, we have `wheat-vcf/ALL.vcf.gz`, so the directory is named `ALL`. **Therefore, it is essential that the VCF files have unique basenames to avoid conflicts**.
+
 Naming convention: `{read_number}-{func_name}-{smooth_func}-{smooth_window_size}-{threshold}.pdf`
 
 - `read_number`: `--p1`
