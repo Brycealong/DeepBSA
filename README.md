@@ -28,9 +28,14 @@ Then install the packages using conda.
 ```
 conda install -c conda-forge pandas matplotlib statsmodels tensorflow pyinstaller tqdm
 ```
+
+### Clone this repository
+
+Change directory to where you want to place this repo and use `git clone https://github.com/Brycealong/DeepBSA.git` to clone the repo. The default name of folder is `DeepBSA`.
+
 ### Models
 
-Please download [this directory](https://drive.google.com/drive/folders/1t-UBBbp1V83j4jv8_htW3BwhGzYX9QLK?usp=drive_link) entirely and place it in the same location as `main.py`.
+Please download [this directory](https://drive.google.com/drive/folders/1t-UBBbp1V83j4jv8_htW3BwhGzYX9QLK?usp=drive_link) entirely and place it in the repo directory you just cloned.
 
 
 
