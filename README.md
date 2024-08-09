@@ -22,11 +22,11 @@ Create an environment (optional).
 ```
 conda create -n deepbsa
 conda activate deepbsa
-conda install -c conda-forge python
+conda install -c conda-forge python=3.11
 ```
 Then install the packages using conda.
 ```
-conda install -c conda-forge pandas matplotlib statsmodels tensorflow pyinstaller tqdm
+conda install -c conda-forge pandas matplotlib statsmodels tensorflow=2.15.0 pyinstaller tqdm
 ```
 
 ### Clone this repository
