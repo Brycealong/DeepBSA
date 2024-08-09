@@ -449,9 +449,9 @@ def get_data(func_name, data=None, ref_data=None, mut_data=None, num_pools=None)
         a = len(data) % 64
         pad_n = [0] * num_pools
         pad_l = np.array([pad_n for _ in range(64 - a)])
-        chrome_data = np.concatenate((data, pad_l), axis=0)
-        batch_size = len(chrome_data) // 64
-        x = generator(x_data=chrome_data, batch_size=batch_size)
+        data = np.concatenate((data, pad_l), axis=0)
+        batch_size = len(data) // 64
+        x = generator(x_data=data, batch_size=batch_size)
         pre = model.predict(x)
         dl_data = pre.reshape(-1)[:a - 64]
         return dl_data
